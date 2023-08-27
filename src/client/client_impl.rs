@@ -510,9 +510,10 @@ impl Client {
                 source_port.to_string(),
                 destination_port.to_string(),
             )),
-            _ => Err(Error::PortConnectionError(
+            e => Err(Error::PortConnectionError(
                 source_port.to_string(),
                 destination_port.to_string(),
+                e
             )),
         }
     }

@@ -207,7 +207,7 @@ fn client_port_cant_connect_inactive_client() {
     // connect them
     assert_eq!(
         client.connect_ports_by_name(&in_p, &out_p).err(),
-        Some(Error::PortConnectionError(in_p, out_p))
+        Some(Error::PortConnectionError(in_p, out_p, 0))
     );
 }
 
@@ -245,6 +245,7 @@ fn client_port_fails_to_connect_nonexistant_ports() {
         Err(Error::PortConnectionError(
             "doesnt_exist".to_string(),
             "also_no_exist".to_string(),
+            0
         ))
     );
 }

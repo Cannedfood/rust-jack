@@ -14,7 +14,7 @@ pub enum Error {
     NotEnoughSpace,
     PortAliasError,
     PortAlreadyConnected(String, String),
-    PortConnectionError(String, String),
+    PortConnectionError(String, String, i32),
     PortDisconnectionError,
     PortMonitorError,
     PortNamingError,
